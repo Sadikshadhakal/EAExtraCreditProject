@@ -1,4 +1,6 @@
 package mum.edu.cs544.control;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.Arrays;
 import mum.edu.cs544.domain.Project;
 import mum.edu.cs544.domain.Task;
@@ -12,6 +14,7 @@ public class Application {
 	public static void main(String[] args) {
 		IService serv = new Service();
 
+		Path path = FileSystems.getDefault().getPath("C:\\tmp", "vcredist.bmp");
 		System.out.println(".........Create New User........");
 		Users user = new Users();
 		user.setUserName("Sadiksha Dhakal");

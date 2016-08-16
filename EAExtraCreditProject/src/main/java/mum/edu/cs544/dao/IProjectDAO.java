@@ -11,4 +11,5 @@ public interface IProjectDAO {
 	List<Project> searchProjectByKeyword(String keyword);
 	List<Project> searchProjectByLocation(String location);
 	List<Project> getAllProjectsHavingVolunteer();
+	List<Project> getAllProjects();
 }

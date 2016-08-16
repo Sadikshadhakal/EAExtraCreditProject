@@ -85,7 +85,7 @@ public class UserDAO implements IUserDAO{
 		try {
 			tx = em.getTransaction();
 			tx.begin();
-			Query query = em.createQuery("FROM User user");
+			Query query = em.createQuery("FROM Users user");
 			userlist = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {

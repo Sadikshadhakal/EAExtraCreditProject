@@ -34,4 +34,7 @@ public class Service implements IService {
 		return userDAO.getAllUsers();
 	}
 
+	public List<Project> getAllProjects() {
+		return projectDAO.getAllProjects();
+	}
 }

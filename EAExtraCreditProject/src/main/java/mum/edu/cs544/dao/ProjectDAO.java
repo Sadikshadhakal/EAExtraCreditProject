@@ -158,4 +158,26 @@ public class ProjectDAO implements IProjectDAO {
 		return projects;
 	}
 
+	public List<Project> getAllProjects() {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = null;
+		List<Project> projects = null;
+		try {
+			tx = em.getTransaction();
+			tx.begin();
+			Query query = em.createQuery("FROM Project");
+			projects = query.getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null) {
+				tx.rollback();
+			}
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return projects;
+	}
+
 }
